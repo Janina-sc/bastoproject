@@ -15,9 +15,9 @@ app.use(cors());
 app.use(express.json());//give and receive json
 
 //Routes
-app.get('/', (req, res)=>{
-    res.send("Hola back")
-})
+// app.get('/', (req, res)=>{
+//     res.send("Hola back")
+// })
 
 //route for cattle's api
 app.use('/api/cattles', require('./routes/index'))
