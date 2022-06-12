@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import {Routes, Route} from 'react-router-dom';
+import Navigation from './components/Navigation';
+import CattleList from './components/CattleList';
+import CreateCattle from './components/CreateCattle';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Navigation/>
+      <div className='contaier p-4'>
+        <Routes>
+          <Route path='/' element={<CattleList/>}/>
+          <Route path='/createCattle' element={<CreateCattle/>}/>
+          <Route path='/edit/:id' element={<CreateCattle/>}/>
+        </Routes>
+
+      </div>
     </div>
   );
 }
