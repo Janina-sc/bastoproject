@@ -15,7 +15,7 @@ function App() {
           <Route path='/edit/:id' element={<CreateCattle/>}/>
         </Routes>
 
-      </div>
+      </div> 
     </div>
   );
 }
