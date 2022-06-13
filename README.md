@@ -1,3 +1,14 @@
+Instrucciones para probar el proyecto en forma local:
+1)Clonar el proyecto "bastoproject".El backend está en la rama "main", y el frontend está en la rama "master".
+2)Inicializar Mongodb para que se conecte el backend con la base de datos.
+3) Una vez clonado, sobre la carpeta "backend" hacer "npm install" y una vez instalado hacer "npm run dev"
+ Esto va a abrir el puerto 4000
+4)Sobre la carpeta "frontend" hacer "npm install", y una vez instalado, realizar un "npm start"
+Esto abrirá el localhost:3000.
+Ya estaría todo listo para probar la app.
+Disfrútela!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
