@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import Paging from "./Paging";
+import Paging from "./Paging";
 
 
 
@@ -9,15 +9,15 @@ const CattleList = () => {
   const [list, setList] = useState([]);
 
    //Pagination
-  //  const [currentPage, setCurrentPage] = useState(1)
-  //  const [cattlesOnPage, setCattlesOnPage] = useState(10)
-  //  const indexLastCattle = currentPage * cattlesOnPage
-  //  const indexFirstCattle = indexLastCattle - cattlesOnPage
-  //  const currentCattles = allCattles?.slice(indexFirstCattle, indexLastCattle)
+   const [currentPage, setCurrentPage] = useState(1)
+   const [cattlesOnPage, setCattlesOnPage] = useState(10)
+   const indexLastCattle = currentPage * cattlesOnPage
+   const indexFirstCattle = indexLastCattle - cattlesOnPage
+   const currentCattles = list?.slice(indexFirstCattle, indexLastCattle)
 
-  //  const pag= (pageNum) => {
-  //      setCurrentPage(pageNum)
-  //  }
+   const pag= (pageNum) => {
+       setCurrentPage(pageNum)
+   }
 
   useEffect(() => {
     const getCattles = async () => {
@@ -51,7 +51,7 @@ const CattleList = () => {
           </tr>
         </thead>
         <tbody >
-         {list?.map((l) => (
+         {currentCattles?.map((l) => (
            <tr>
 
             <>
@@ -81,14 +81,14 @@ const CattleList = () => {
           ))}
         </tbody>
       </table>
-      {/* <div className='col'> 
+      <div className='col'> 
                 <Paging
         cattlesOnPage={cattlesOnPage}
-        allCattles={allCattles.length}
+        allCattles={list.length}
         pag={pag}
 
      /> 
-             </div>  */}
+             </div> 
       </div>
     
     
