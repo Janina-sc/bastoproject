@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Paging from "./Paging";
+import {MdOutlineDeleteForever, MdOutlineModeEditOutline} from "react-icons/md";
+
 
 
 
@@ -63,16 +65,19 @@ const CattleList = () => {
               <td>{l.device}</td>
               <td>{l.numberDevice}</td>
               <td>
-                <button
+                {/* <button
                   className="btn btn-danger"
                   onClick={() => deleteCattle(l._id)}
                   
                 >
                   Eliminar
-                </button>
-                <Link className="btn btn-primary m-1" to={"/edit/" + l._id} style={{width:"7.5rem", height:"2.5rem"}} >
+                </button> */}
+                <MdOutlineDeleteForever  onClick={() => deleteCattle(l._id)} style={{fontSize:"1.5rem"}} >
+                  </MdOutlineDeleteForever>
+                {/* <Link className="btn btn-primary m-1" to={"/edit/" + l._id} style={{width:"7.5rem", height:"2.5rem"}} >
                   Editar
-                </Link>
+                </Link> */}
+                <Link to={"/edit/" + l._id} style={{textDecoration:"none", height:"5rem", padding:"1rem", fontSize:"1.5rem"}}> <MdOutlineModeEditOutline> </MdOutlineModeEditOutline></Link>
               </td>
              
              
