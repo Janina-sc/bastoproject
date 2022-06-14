@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Paging from "./Paging";
 import {MdOutlineDeleteForever, MdOutlineModeEditOutline} from "react-icons/md";
+import Swal from "sweetalert"
 
 
 
@@ -34,6 +35,7 @@ const CattleList = () => {
 
   const deleteCattle = async (id) => {
     await axios.delete("http://localhost:4000/api/cattles/" + id);
+    alert("Está a punto de borrar un registro!")
   };
 
   return (
